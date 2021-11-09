@@ -1,24 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @classmate.first_name %>
-</p>
+<div class="card">
+  <div class="card-header">
+    Colega <%= @classmate.id %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @classmate.first_name %> <%= @classmate.last_name %></h5>
+    <p class="card-text">Email: <%= @classmate.email %></p>
+    <p class="card-text">Idade: <%= @classmate.age %></p>
+    <%= link_to 'Edit', edit_classmate_path(@classmate), class: 'btn btn-dark' %>
+    <%= link_to 'Back', classmates_path, class: 'btn btn-dark' %>
+  </div>
+</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @classmate.last_name %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @classmate.email %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @classmate.age %>
-</p>
-
-<%= link_to 'Edit', edit_classmate_path(@classmate) %> |
-<%= link_to 'Back', classmates_path %>
